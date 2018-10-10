@@ -1,4 +1,4 @@
-import _ from 'lodash';
+let _ = require('lodash');
 
 class DropZoneInstanceManager {
     constructor (html, DropZoneFactory, BrowseNodeFactory) {

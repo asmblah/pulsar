@@ -1,12 +1,12 @@
-import DropZoneComponent from './DropZoneComponent';
-import DropZoneInstanceManager from './DropZoneInstanceManager';
-import DropZoneFactory from './DropZoneFactory';
-import DropZoneOptionsManager from './DropZoneOptionsManager';
-import DropZoneComponentUtils from './DropZoneComponentUtils';
-import DropZoneComponentValidationManager from './DropZoneComponentValidationManager';
-import DropZoneBodyClassManager from './DropZoneBodyClassManager';
-import MimeTyper from '../libs/MimeTyper';
-import DropZoneBrowseNodeFactory from './DropZoneBrowseNodeFactory';
+let DropZoneComponent = require('./DropZoneComponent');
+let DropZoneInstanceManager = require('./DropZoneInstanceManager');
+let DropZoneFactory = require('./DropZoneFactory');
+let DropZoneOptionsManager = require('./DropZoneOptionsManager');
+let DropZoneComponentUtils = require('./DropZoneComponentUtils');
+let DropZoneComponentValidationManager = require('./DropZoneComponentValidationManager');
+let DropZoneBodyClassManager = require('./DropZoneBodyClassManager');
+let MimeTyper = require('../libs/MimeTyper');
+let DropZoneBrowseNodeFactory = require('./DropZoneBrowseNodeFactory');
 
 class DropZoneComponentFactory {
     /**

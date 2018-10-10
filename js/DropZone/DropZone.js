@@ -1,4 +1,4 @@
-export default class DropZone {
+class DropZone {
     /**
      * DropZone
      * @param {Element} node
@@ -318,3 +318,5 @@ export default class DropZone {
         this.enabled = false;
     }
 }
+
+module.exports = DropZone;

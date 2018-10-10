@@ -1,4 +1,4 @@
-import DropZoneBrowseNodeManager from './DropZoneBrowseNodeManager';
+let DropZoneBrowseNodeManager = require('./DropZoneBrowseNodeManager');
 
 class DropZoneBrowseNodeFactory {
     /**

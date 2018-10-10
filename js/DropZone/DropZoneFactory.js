@@ -1,12 +1,12 @@
-import DropZoneValidationUtils from './DropZoneValidationUtils';
-import DropZoneErrors from './DropZoneErrors';
-import DropZoneValidatorDisatcher from './DropZoneValidatorDispatcher';
-import DropZoneEventManager from './DropZoneEventManager';
-import DropZoneIdleTimer from './DropZoneIdleTimer';
-import DropZoneFileManager from './DropZoneFileManager';
-import DropZoneFileUtils from './DropZoneFileUtils';
-import DropZoneCallbackManager from './DropZoneCallbackManager';
-import DropZone from './DropZone';
+let DropZoneValidationUtils = require('./DropZoneValidationUtils');
+let DropZoneErrors = require('./DropZoneErrors');
+let DropZoneValidatorDisatcher = require('./DropZoneValidatorDispatcher');
+let DropZoneEventManager = require('./DropZoneEventManager');
+let DropZoneIdleTimer = require('./DropZoneIdleTimer');
+let DropZoneFileManager = require('./DropZoneFileManager');
+let DropZoneFileUtils = require('./DropZoneFileUtils');
+let DropZoneCallbackManager = require('./DropZoneCallbackManager');
+let DropZone = require('./DropZone');
 
 class DropZoneFactory {
     /**
