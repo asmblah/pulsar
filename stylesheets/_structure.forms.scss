@@ -12,7 +12,8 @@
     width: 100%;
 
     // the main label, usually placed in the left hand column
-    > .control__label {
+    > .control__label,
+    span.control__label {
         @include col-span($form-label-cols);
         word-wrap: break-word;
     }
@@ -53,7 +54,7 @@
 
 // Add a gutter between form labels and controls
 .control__label + .controls {
-    @include col-span($form-control-cols, false, true);
+    @include col-span($form-control-cols, false);
 }
 
 // inputs can be aligned next to each other if required

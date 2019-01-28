@@ -45,10 +45,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-
-    @include respond-min($screen-desktop) {
-        width: auto;
-    }
+    width: 100%;
 
     @include ie-lte(9) {
         height: 49px;
@@ -194,6 +191,11 @@
         background: $nav-color-dark;
         color: color(white);
     }
+
+    &:focus {
+        outline: 3px solid color(border, focus);
+        outline-offset: 2px;
+    }
 }
 
 .nav-items {
@@ -214,6 +216,10 @@
 .nav-link {
     color: color(white);
     text-decoration: none;
+
+    &:focus {
+        outline: 3px solid color(border, focus);
+    }
 }
 
 .nav-primary {
@@ -238,6 +244,8 @@
     }
 
     .nav-link {
+        background-color: transparent;
+        border: 0;
         color: color(white);
         display: block;
         font-family: $font-family-regular;
@@ -347,8 +355,11 @@
     }
 
     .nav-link {
+        background-color: transparent;
+        border: 0;
         border-top-right-radius: 8px;
         border-bottom-left-radius: 8px;
+        text-align: left;
 
         &:hover,
         &:focus {
@@ -414,7 +425,8 @@
 
 .jadu-branding {
     display: block;
-    margin: 10px 0 4px;
+    margin-top: 3px;
+    padding: 10px 0 4px;
     text-decoration: none;
 
     &.is-active {
@@ -458,18 +470,25 @@
 
 .nav-close,
 .nav-close-ltr {
+    background: none;
+    border: 0;
     color: color(white);
     display: none;
-    padding: 0 20px 23px;
-    text-decoration: none;
+    margin-bottom: 23px;
     margin-top: 24px;
+    padding: 0 20px;
     text-align: right;
+    text-decoration: none;
     width: 100%;
 
     &:hover i::before,
     &:focus i::before {
         content: '\f0a8';
         color: color(white);
+    }
+
+    &:focus {
+        outline: 3px solid color(border, focus);
     }
 
     .nav-secondary.is-open &,
@@ -502,8 +521,8 @@
     background-size: $branding-navigation-width $branding-navigation-height;
     background-repeat: no-repeat;
     display: inline-block;
-    text-align: center;
     height: $branding-navigation-height;
+    text-align: center;
     width: $branding-navigation-width;
 
 	// Support transparent PNG background images in IE8

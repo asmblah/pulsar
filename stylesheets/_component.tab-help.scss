@@ -59,13 +59,14 @@ $nav-color-dark:  darken(color(jadu-blue, dark), 5%) !default;
 }
 
 .show-page-help {
-    border-radius: 4px;
+    background-color: transparent;
+    border: 0;
     color: color(gray, dark);
     display: inline-block;
     float: right;
     font-size: .9em;
     line-height: normal;
-    margin-top: 10px;
+    padding: 0;
     text-decoration: none;
     transition: all 100ms ease-in;
 
@@ -81,13 +82,19 @@ $nav-color-dark:  darken(color(jadu-blue, dark), 5%) !default;
     &:active {
         color: darken($nav-color-dark, 10%);
     }
+
+    &:focus {
+        outline: 3px solid color(border, focus);
+    }
 }
 
 .close-page-help {
+    background-color: transparent;
+    border: 0;
+    font-size: $font-size-xlarge;
+    margin-bottom: 10px;
     position: absolute;
-    top: 10px;
     right: 10px;
     text-decoration: none;
-    margin-bottom: 10px;
-    font-size: 1.5em;
+    top: 10px;
 }

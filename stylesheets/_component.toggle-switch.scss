@@ -31,7 +31,8 @@
     }
 
     &:focus + .toggle-switch-label {
-        box-shadow: 0 0 0 2px white, 0 0 0 4px color(primary);
+        outline: 3px solid color(border, focus);
+        outline-offset: 1px;
     }
 
     &.toggle-switch--large + .toggle-switch-label {
@@ -81,22 +82,18 @@
     }
 
     &::after {
+        color: color(white);
         content: '\F00C \F00D';
         font-family: 'FontAwesome';
-        font-size: 14px;
+        font-size: $font-size-base;
         left: 10px;
-        letter-spacing: 10px;
+        letter-spacing: 14.4px; // Magic number - for correct alignment
         line-height: 2;
         position: absolute;
         top: 0;
         transition: .3s;
         width: 100%;
         z-index: 1;
-
-        @include respond-min($screen-xsmall) {
-            font-size: 16px;
-            letter-spacing: 14.4px;
-        }
     }
 }
 
@@ -116,4 +113,13 @@
 
 .toggle-switch.is-disabled + .toggle-switch-label {
     opacity: .5;
+}
+
+.toggle-switch-wrapper-label {
+    display: block;
+
+    .control__label {
+        padding-top: 11px;
+        padding-right: 10px;
+    }
 }

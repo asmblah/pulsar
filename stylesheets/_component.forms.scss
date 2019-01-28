@@ -52,6 +52,7 @@ fieldset {
 }
 
 .form__control {
+    appearance: none;
     border-radius: $input-border-radius;
     height: $input-height-base;
     line-height: $input-height-base;
@@ -239,9 +240,10 @@ fieldset {
     }
 
     &:focus {
-        border: 1px solid color(primary);
-        box-shadow: 0 0 0 1px color(primary);
-        outline: none;
+        border: 1px solid color(black);
+        box-shadow: 0 0 0 1px color(black);
+        outline: 3px solid color(border, focus);
+        outline-offset: 2px;
     }
 }
 
@@ -352,7 +354,7 @@ fieldset {
 
     // column variations
     @for $i from 1 through 9 {
-        .control__label + .controls > .form__control.form__control-col--#{$i},
+        .control__label + .controls > .form__control:not(.checkbox):not(.radio).form__control-col--#{$i},
         .form__control-col--#{$i} .control__label + .controls > .form__control,
         .form__control-col--#{$i} .control__label + .controls > .form__control:not(.checkbox):not(.radio),
         .form__control-col--#{$i} .control__label + .controls > .form__control:not(.checkbox):not(.radio) + .select2 {
@@ -556,8 +558,8 @@ fieldset {
     }
 
     &:focus {
-        border-color: color(primary);
-        box-shadow: 0 0 0 2px color(primary);
+        border-color: color(black);
+        box-shadow: 0 0 0 2px color(black);
     }
 
     &::before {
@@ -615,10 +617,6 @@ fieldset {
         display: inline-block;
         width: 100%;
     }
-
-    // .control__label > .form__control {
-    //     width: auto;
-    // }
 }
 
 .form-choice {
@@ -626,8 +624,7 @@ fieldset {
         margin-top: 11px; // magic number to align with main label
 
         > .control__label {
-            clear: left;
-            float: left;
+            line-height: $line-height-large;
         }
     }
 }
@@ -640,12 +637,14 @@ fieldset {
 }
 
 .form__indent {
-    margin-left: 25%;
-    margin-right: $gutter-width;
+    @include respond-min($screen-tablet) {
+        margin-left: 25%;
+        margin-right: $gutter-width;
 
-    p {
-        margin-left: 0;
-        padding-left: 0;
+        p {
+            margin-left: 0;
+            padding-left: 0;
+        }
     }
 }
 
@@ -677,6 +676,17 @@ fieldset {
 
 .form-range .input-group > .form__control:last-child {
     padding-right: 0;
+}
+
+.form__group {
+    .table tbody {
+        background-color: #fafafa;
+        border-top: 1px solid color(border);
+    }
+
+    .table-container {
+        margin-bottom: .5em;
+    }
 }
 
 // undo default fieldset padding

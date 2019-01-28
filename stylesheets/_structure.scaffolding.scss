@@ -10,16 +10,11 @@ body {
 body {
   background-color: color(white);
   font-family: $font-family-base;
-  font-size: $font-size-medium;
-  line-height: $line-height-small;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
   margin: 0 0 ($line-height-base * 2);
   overflow-x: hidden;
   padding: 0;
-
-  @include respond-min($screen-phone) {
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-  }
 }
 
 .container {
@@ -42,14 +37,18 @@ body {
 }
 
 // Links
-
 a {
   color: color(link);
   cursor: pointer;
-}
 
-a:hover {
-  color: color(link, hover);
+  &:hover {
+    color: color(link, hover);
+  }
+
+  &:focus {
+    color: color(link, focus);
+    outline: 3px solid color(border, focus);
+  }
 }
 
 a.disabled {
@@ -73,6 +72,8 @@ a.disabled {
   &:focus {
     display: block;
     left: 0;
+    outline-offset: -2px;
+    outline: 3px solid color(border, focus);
     position: relative;
     top: 0;
     width: 100%;
